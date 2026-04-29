@@ -45,7 +45,7 @@ body {
 
 .controls {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
   align-items: end;
   margin: 16px 0;
@@ -183,7 +183,4 @@ tr:last-child td {
     grid-template-columns: 1fr;
   }
 
-  button {
-    width: 100%;
-  }
 }

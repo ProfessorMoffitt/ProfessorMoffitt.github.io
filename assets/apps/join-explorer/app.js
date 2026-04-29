@@ -361,7 +361,6 @@ const scenarios = {
 
 const scenarioSelect = document.getElementById("scenarioSelect");
 const joinSelect = document.getElementById("joinSelect");
-const runJoinBtn = document.getElementById("runJoinBtn");
 
 const leftTableTitle = document.getElementById("leftTableTitle");
 const rightTableTitle = document.getElementById("rightTableTitle");
@@ -372,7 +371,6 @@ const joinExplanation = document.getElementById("joinExplanation");
 
 scenarioSelect.addEventListener("change", updateActivity);
 joinSelect.addEventListener("change", updateActivity);
-runJoinBtn.addEventListener("click", updateActivity);
 
 function updateActivity() {
   const scenario = scenarios[scenarioSelect.value];
