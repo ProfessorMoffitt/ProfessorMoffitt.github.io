@@ -1,0 +1,13 @@
+title: Professor Moffitt
+description: Accounting, analytics, AI, and student resources.
+theme: minima
+
+author:
+  name: Professor Moffitt
+
+header_pages:
+  - about.md
+  - apps.md
+  - blog.md
+  - handbook.md
+  - cv.md
