@@ -162,3 +162,15 @@ In this example:
 * The left outer join with `WHERE Receipt# IS NULL` shows only unpaid shipments.
 
 When you are working with accounting data, joins are not just technical database tools. They help answer practical accounting questions. Did we ship the product? Did we receive the cash? Which shipments are still unpaid? Which records match, and which records do not? 
+
+## Try it yourself
+
+Use the Join Explorer below to see how the query result changes when you switch between an inner join, a left outer join, and unmatched records only.
+
+<iframe
+  src="{{ site.baseurl }}/assets/apps/join-explorer/"
+  width="100%"
+  height="760"
+  style="border: none;"
+  loading="lazy">
+</iframe>

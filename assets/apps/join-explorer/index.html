@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Join Explorer</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="join-explorer">
+    <section class="activity-intro">
+      <h2>Interactive Activity: Join Explorer</h2>
+      <p>
+        Choose a data example and a join type. Then compare the source tables to the query result.
+      </p>
+    </section>
+
+    <section class="controls" aria-label="Join explorer controls">
+      <div class="control-group">
+        <label for="scenarioSelect">Data example</label>
+        <select id="scenarioSelect">
+          <option value="shipments">Shipments and cash receipts</option>
+          <option value="employees">Employees and sales</option>
+          <option value="orders">Product orders and receipts</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="joinSelect">Join type</label>
+        <select id="joinSelect">
+          <option value="inner">Inner join: matching records only</option>
+          <option value="left">Left outer join: all records from the first table</option>
+          <option value="unmatched">Unmatched records only</option>
+        </select>
+      </div>
+
+      <button id="runJoinBtn">Run Join</button>
+    </section>
+
+    <section class="explanation-box" aria-live="polite">
+      <p id="joinExplanation">
+        Select an example and a join type, then run the join.
+      </p>
+    </section>
+
+    <section class="tables-area" aria-label="Source tables">
+      <div class="source-table-card">
+        <h3 id="leftTableTitle">First Table</h3>
+        <div id="leftTableContainer" class="table-scroll"></div>
+      </div>
+
+      <div class="source-table-card">
+        <h3 id="rightTableTitle">Second Table</h3>
+        <div id="rightTableContainer" class="table-scroll"></div>
+      </div>
+    </section>
+
+    <section class="result-card" aria-label="Join result">
+      <h3>Query Result</h3>
+      <div id="resultTableContainer" class="table-scroll"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
