@@ -170,7 +170,7 @@ Use the Join Explorer below to see how the query result changes when you switch 
 <iframe
   src="{{ site.baseurl }}/assets/apps/join-explorer/"
   width="100%"
-  height="760"
+  height="900"
   style="border: none;"
   loading="lazy">
 </iframe>
