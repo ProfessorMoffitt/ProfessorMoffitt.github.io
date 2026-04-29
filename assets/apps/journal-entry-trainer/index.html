@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Journal Entry Trainer</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-container">
+    <header class="app-header">
+      <p class="site-label">Accounting Education Mini-App</p>
+      <h1>Journal Entry Trainer</h1>
+      <p class="intro">
+        Practice identifying the debit, credit, and explanation for common accounting transactions.
+        Choose a topic, think through the entry, then reveal the answer.
+      </p>
+    </header>
+
+    <section class="controls-card" aria-label="Question controls">
+      <div class="topic-control">
+        <label for="topicSelect">Choose a topic</label>
+        <select id="topicSelect">
+          <!-- Options are added by app.js -->
+        </select>
+      </div>
+
+      <div class="score-box" aria-label="Session score">
+        <div>
+          <span class="score-label">Correct</span>
+          <span id="correctCount" class="score-value">0</span>
+        </div>
+        <div>
+          <span class="score-label">Attempted</span>
+          <span id="attemptedCount" class="score-value">0</span>
+        </div>
+        <div>
+          <span class="score-label">Score</span>
+          <span id="scorePercent" class="score-value">0%</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="question-card" aria-live="polite">
+      <div class="question-meta">
+        <span id="topicLabel" class="topic-badge">Topic</span>
+        <span id="questionNumber" class="question-number">Question 1</span>
+      </div>
+
+      <h2>Transaction</h2>
+      <p id="transactionPrompt" class="transaction-text">
+        Loading question...
+      </p>
+
+      <div class="thinking-prompts">
+        <h3>Think it through</h3>
+        <ul>
+          <li>What account changed?</li>
+          <li>Did the account increase or decrease?</li>
+          <li>What is the normal balance?</li>
+          <li>Should it be debited or credited?</li>
+        </ul>
+      </div>
+
+      <div id="answerSection" class="answer-section hidden">
+        <h3>Answer</h3>
+
+        <div class="entry-table">
+          <div class="entry-row entry-header">
+            <span>Account</span>
+            <span>Debit</span>
+            <span>Credit</span>
+          </div>
+
+          <div class="entry-row">
+            <span id="debitAccount">Debit account</span>
+            <span id="debitAmount">$0</span>
+            <span></span>
+          </div>
+
+          <div class="entry-row">
+            <span id="creditAccount" class="credit-indent">Credit account</span>
+            <span></span>
+            <span id="creditAmount">$0</span>
+          </div>
+        </div>
+
+        <div class="explanation-box">
+          <h4>Explanation</h4>
+          <p id="explanationText"></p>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="showAnswerBtn" class="primary-btn">Show Answer</button>
+        <button id="nextQuestionBtn">Next Question</button>
+        <button id="markCorrectBtn">Mark Correct</button>
+        <button id="markIncorrectBtn">Mark Incorrect</button>
+        <button id="resetScoreBtn" class="secondary-btn">Reset Score</button>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <p>
+        Educational use only. This app is designed for accounting practice and does not provide tax,
+        legal, investment, or professional advice.
+      </p>
+      <p>
+        <a href="../../../apps.html">Back to Apps</a>
+      </p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
