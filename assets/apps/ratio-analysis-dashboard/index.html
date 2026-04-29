@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ratio Analysis Dashboard</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-container">
+    <header class="app-header">
+      <p class="site-label">Accounting Education Mini-App</p>
+      <h1>Ratio Analysis Dashboard</h1>
+      <p class="intro">
+        Enter simplified financial statement amounts to calculate common liquidity,
+        profitability, solvency, and efficiency ratios. Use the results to practice
+        interpreting financial performance and position.
+      </p>
+    </header>
+
+    <section class="instructions-card">
+      <h2>How to use this app</h2>
+      <p>
+        Enter financial statement amounts below, then click <strong>Calculate Ratios</strong>.
+        You may leave fields blank. The app will show “Need more data” when a ratio cannot
+        be calculated.
+      </p>
+      <p>
+        You can also click <strong>Load Sample Company Data</strong> to quickly test the dashboard.
+      </p>
+    </section>
+
+    <section class="button-panel" aria-label="Dashboard controls">
+      <button id="calculateBtn" class="primary-btn">Calculate Ratios</button>
+      <button id="sampleBtn">Load Sample Company Data</button>
+      <button id="clearBtn" class="secondary-btn">Clear Inputs</button>
+    </section>
+
+    <section class="input-grid" aria-label="Financial statement inputs">
+      <div class="input-card">
+        <h2>Income Statement Inputs</h2>
+
+        <div class="form-row">
+          <label for="netSales">Net sales / revenue</label>
+          <input id="netSales" type="text" inputmode="decimal" placeholder="Example: 1,000,000" />
+        </div>
+
+        <div class="form-row">
+          <label for="costOfGoodsSold">Cost of goods sold</label>
+          <input id="costOfGoodsSold" type="text" inputmode="decimal" placeholder="Example: 600,000" />
+        </div>
+
+        <div class="form-row">
+          <label for="grossProfit">
+            Gross profit <span class="optional-note">optional</span>
+          </label>
+          <input id="grossProfit" type="text" inputmode="decimal" placeholder="Calculated if blank" />
+        </div>
+
+        <div class="form-row">
+          <label for="operatingIncome">Operating income</label>
+          <input id="operatingIncome" type="text" inputmode="decimal" placeholder="Example: 140,000" />
+        </div>
+
+        <div class="form-row">
+          <label for="netIncome">Net income</label>
+          <input id="netIncome" type="text" inputmode="decimal" placeholder="Example: 90,000" />
+        </div>
+
+        <div class="form-row">
+          <label for="interestExpense">Interest expense</label>
+          <input id="interestExpense" type="text" inputmode="decimal" placeholder="Example: 20,000" />
+        </div>
+      </div>
+
+      <div class="input-card">
+        <h2>Balance Sheet Inputs</h2>
+
+        <div class="form-row">
+          <label for="cash">Cash</label>
+          <input id="cash" type="text" inputmode="decimal" placeholder="Example: 80,000" />
+        </div>
+
+        <div class="form-row">
+          <label for="accountsReceivable">Accounts receivable</label>
+          <input id="accountsReceivable" type="text" inputmode="decimal" placeholder="Example: 120,000" />
+        </div>
+
+        <div class="form-row">
+          <label for="inventory">Inventory</label>
+          <input id="inventory" type="text" inputmode="decimal" placeholder="Example: 160,000" />
+        </div>
+
+        <div class="form-row">
+          <label for="currentAssets">Current assets</label>
+          <input id="currentAssets" type="text" inputmode="decimal" placeholder="Example: 420,000" />
+        </div>
+
+        <div class="form-row">
+          <label for="totalAssets">Total assets</label>
+          <input id="totalAssets" type="text" inputmode="decimal" placeholder="Example: 900,000" />
+        </div>
+
+        <div class="form-row">
+          <label for="currentLiabilities">Current liabilities</label>
+          <input id="currentLiabilities" type="text" inputmode="decimal" placeholder="Example: 210,000" />
+        </div>
+
+        <div class="form-row">
+          <label for="totalLiabilities">Total liabilities</label>
+          <input id="totalLiabilities" type="text" inputmode="decimal" placeholder="Example: 400,000" />
+        </div>
+
+        <div class="form-row">
+          <label for="totalEquity">Total equity</label>
+          <input id="totalEquity" type="text" inputmode="decimal" placeholder="Example: 500,000" />
+        </div>
+      </div>
+
+      <div class="input-card wide-card">
+        <h2>Beginning and Ending Balance Inputs</h2>
+        <p class="section-help">
+          These amounts are used for ratios that require averages, such as return on assets,
+          return on equity, inventory turnover, receivables turnover, and asset turnover.
+        </p>
+
+        <div class="two-column-fields">
+          <div class="form-row">
+            <label for="beginningTotalAssets">Beginning total assets</label>
+            <input id="beginningTotalAssets" type="text" inputmode="decimal" placeholder="Example: 800,000" />
+          </div>
+
+          <div class="form-row">
+            <label for="beginningEquity">Beginning equity</label>
+            <input id="beginningEquity" type="text" inputmode="decimal" placeholder="Example: 460,000" />
+          </div>
+
+          <div class="form-row">
+            <label for="beginningInventory">Beginning inventory</label>
+            <input id="beginningInventory" type="text" inputmode="decimal" placeholder="Example: 140,000" />
+          </div>
+
+          <div class="form-row">
+            <label for="endingInventory">Ending inventory</label>
+            <input id="endingInventory" type="text" inputmode="decimal" placeholder="Example: 160,000" />
+          </div>
+
+          <div class="form-row">
+            <label for="beginningAccountsReceivable">Beginning accounts receivable</label>
+            <input id="beginningAccountsReceivable" type="text" inputmode="decimal" placeholder="Example: 100,000" />
+          </div>
+
+          <div class="form-row">
+            <label for="endingAccountsReceivable">Ending accounts receivable</label>
+            <input id="endingAccountsReceivable" type="text" inputmode="decimal" placeholder="Example: 120,000" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section" aria-label="Ratio results">
+      <div class="results-header">
+        <h2>Ratio Results</h2>
+        <p>
+          Results appear after you calculate ratios. Interpret ratios carefully because
+          industry, company strategy, accounting policies, and economic conditions matter.
+        </p>
+      </div>
+
+      <div id="resultsContainer" class="results-container">
+        <!-- Ratio cards are added by app.js -->
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <p>
+        This tool is for educational purposes only. Ratio interpretation depends on industry,
+        company strategy, accounting policies, and other context.
+      </p>
+      <p>
+        <a href="../../../apps.html">Back to Apps</a>
+      </p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
